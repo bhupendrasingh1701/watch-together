@@ -21,13 +21,14 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:5173' }));
+const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
+app.use(cors({ origin: CLIENT_URL }));
 app.use(express.json());
 app.use('/uploads', express.static(UPLOAD_DIR));
 
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: { origin: 'http://localhost:5173', methods: ['GET','POST'] }
+  cors: { origin: CLIENT_URL, methods: ['GET','POST'] }
 });
 
 // In-memory rooms store
