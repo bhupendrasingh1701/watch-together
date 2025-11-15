@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+
+# Builds
+dist/
+dist-ssr/
+
+# Local env
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- FRONTEND (client) ---
+client/node_modules/
+client/dist/
+client/.env
+client/.DS_Store
+client/.vite/
+
+# --- BACKEND (server) ---
+server/node_modules/
+server/dist/
+server/.env
+server/.DS_Store

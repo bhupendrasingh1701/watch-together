@@ -1,0 +1,127 @@
+/* client/src/index.css - Solarized Dark Theme */
+
+/* -------------------------------------------------
+   THEME VARIABLES (Solarized Dark)
+   ------------------------------------------------- */
+
+:root {
+  /* Solarized Dark palette */
+  --bg: #002b36;
+  --surface: #073642;
+  --primary: #268bd2;
+  --accent: #b58900;
+  --muted: #839496;
+  --text: #fdf6e3;
+  --focus: #2aa198;
+
+  /* base typography */
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: var(--text);
+  background-color: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------------------------------
+   LINK STYLES
+   ------------------------------------------------- */
+
+a {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* -------------------------------------------------
+   ROOT FULL HEIGHT SUPPORT
+   ------------------------------------------------- */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* Solarized-style gradient */
+  background: linear-gradient(180deg, #002b36, #073642 45%, #002b36);
+  color: var(--text);
+}
+
+/* -------------------------------------------------
+   BODY
+   ------------------------------------------------- */
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  display: block;
+  background-color: var(--bg);
+}
+
+/* -------------------------------------------------
+   HEADINGS
+   ------------------------------------------------- */
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+/* -------------------------------------------------
+   BUTTONS
+   ------------------------------------------------- */
+
+button {
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
+
+  background-color: var(--surface);
+  color: var(--text);
+}
+
+button:hover {
+  border-color: var(--primary);
+  background-color: #0d3f4b; /* slightly lighter surface */
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px solid var(--focus);
+}
+
+/* -------------------------------------------------
+   LIGHT MODE (OPTIONAL)
+   If someone's device forces light mode
+   ------------------------------------------------- */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #073642;
+    background-color: #fdf6e3;
+  }
+  a:hover {
+    color: #b58900;
+  }
+  button {
+    background-color: #eee8d5;
+    color: #073642;
+  }
+}
