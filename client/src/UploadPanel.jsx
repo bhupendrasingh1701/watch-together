@@ -2,7 +2,11 @@
 import React, { useState } from 'react';
 import { socket } from './socket';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+const API_BASE =
+  import.meta.env?.VITE_API_URL ||
+  import.meta.env?.VITE_SERVER_URL ||
+  (typeof window !== "undefined" ? `${window.location.protocol}//${window.location.host}` : "http://localhost:3000");
+
 
 export default function UploadPanel({ roomId, canUpload }) {
   const [file, setFile] = useState(null);
